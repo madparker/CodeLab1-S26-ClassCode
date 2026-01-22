@@ -1,5 +1,7 @@
-# FILL IN INFO ABOUT YOUR GAME HERE. 
+# Code Lab 1 - In Class Code
 
-DO NOT LEAVE IT LIKE THIS!!!
+Code Developed for Code Lab 1 in class and outside of class
 
-Please? Please, give me content. I'm begging you. It's not that hard. Thanks.
+Spring 2026
+
+Link to the brightspace: https://brightspace.nyu.edu/d2l/home/546991
