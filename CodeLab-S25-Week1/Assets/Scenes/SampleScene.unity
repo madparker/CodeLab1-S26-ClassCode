@@ -494,9 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af17eb734ce2e418cae1a3c1bc36fab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WASDController
-  rb: {fileID: 0}
   moveForce: 10
-  maxSpeed: 5
   keyUp: 37
   keyDown: 33
   keyLeft: 15
