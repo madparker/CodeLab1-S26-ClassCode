@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
     
 public class WASDController : MonoBehaviour
 { 
-    Rigidbody rb;
+    Rigidbody rb; //rigidBody for this GameObject that this script is attached to
 
     public float moveForce = 10f;
 
@@ -25,9 +25,9 @@ public class WASDController : MonoBehaviour
         }
         
         
-        // if(Input.GetKey(KeyCode.S))
-        // {
-        //     rb.AddForce(Vector3.down * moveForce, ForceMode.Acceleration);
-        // }
+        if(Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce(Vector3.down * moveForce, ForceMode.Acceleration);
+        }
     }
 }
