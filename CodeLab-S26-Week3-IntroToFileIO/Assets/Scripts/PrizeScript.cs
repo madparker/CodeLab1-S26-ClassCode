@@ -27,6 +27,6 @@ public class PrizeScript : MonoBehaviour
 
         // Increment the shared score on the GameManager singleton.
         // Ensure `GameManager.instance` is set (GameManager exists) to avoid a null reference.
-        GameManager.instance.score++;
+        GameManager.instance.Score++;
     }
 }
