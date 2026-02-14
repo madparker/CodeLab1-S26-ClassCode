@@ -8,17 +8,17 @@ public class GameManager : MonoBehaviour
 {
     public GameObject timerTextObject; //the gameObject with the timer text
 
-    TextMeshPro textMeshComponent;
+    TextMeshPro textMeshComponent; //Timer dislay
     
-    public static GameManager instance;
+    public static GameManager instance; //Singleton
+
+    float time = 0; //keeps track of how much time has ellapsed
+
+    public int gameTime = 5; //when the game ends
     
-    private int score = 0;
-
-    float time = 0;
-
-    public int gameTime = 5;
-
-    public int Score
+    private int score = 0; //private var for score
+    
+    public int Score //property for score
     {
         set
         {
@@ -31,18 +31,21 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    bool isGameOver = false;
+    bool isGameOver = false; //is the game over yet
 
-    List<int> highScores;
+    List<int> highScores; //List for highScores
 
     //create a basic property for score
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        textMeshComponent = timerTextObject.GetComponent<TextMeshPro>();
+        //TODO: This is not a real todo item, just put it here as an example
         
-        if (instance == null)
+        textMeshComponent = timerTextObject.GetComponent<TextMeshPro>(); //get text displays
+        
+        //Singleton Code
+        if (instance == null) 
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
+        //calls IncreaseTime function in 1 second and then repeatedly every 1 second
         InvokeRepeating("IncreaseTime", 1f, 1f);
     }
 
@@ -60,20 +64,21 @@ public class GameManager : MonoBehaviour
     {
         //time  += Time.deltaTime;
         
-        textMeshComponent.SetText("Time: " + Math.Floor(time));
+        textMeshComponent.SetText("Time: " + Math.Floor(time)); //set the timer display
         
-        if(time >= gameTime) {
+        if(time >= gameTime) { //is the timer up?
             Debug.Log("Game Over");
 
-            if (!isGameOver)
+            if (!isGameOver) //is this our first time here?
             {
-                UpdateHighScores();
+                UpdateHighScores(); //Update the High Scores file
             }
 
-            isGameOver = true;
+            isGameOver = true; //flip this flag so we don't save to the file over and over
         }
     }
 
+    //function used by invoke to increase time
     void IncreaseTime()
     {
         time++;
@@ -81,6 +86,7 @@ public class GameManager : MonoBehaviour
         //Invoke ("IncreaseTime", 1f);
     }
 
+    //updates the high scores list and saves it in the file
     void UpdateHighScores()
     {
         //the path to the high scores file
@@ -103,7 +109,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                //TODO: read value from the file and put them into the list
+                //read value from the file and put them into the list
                 string scores = File.ReadAllText(filePath);
                 
                 string[] scoresArray = scores.Split(",");
