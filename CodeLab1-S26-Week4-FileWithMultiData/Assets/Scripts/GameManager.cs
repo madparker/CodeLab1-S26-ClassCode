@@ -116,7 +116,16 @@ public class GameManager : MonoBehaviour
 
                 for (int i = 0; i < scoresArray.Length; i++)
                 {
-                    highScores.Add(int.Parse(scoresArray[i]));
+                    Debug.Log("Parse: " + scoresArray[i]);
+
+                    try //try to do some code that might produce an exception
+                    {
+                        highScores.Add(int.Parse(scoresArray[i]));
+                    } 
+                    catch (FormatException fe){ //if this exception occurs, run the code below
+                        Debug.Log(fe.Message);
+                        Debug.Log(fe.StackTrace);
+                    }
                 }
             }
         }
