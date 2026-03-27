@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7906f8157ef44a35979d99a376172c7, type: 3}
+  m_Name: Bathroom
+  m_EditorClassIdentifier: Assembly-CSharp::Location
+  name: Bathroom
+  description: Do not go in there.
+  northLocation: {fileID: 11400000, guid: d4c4589efdf4a4c2686f7a3109e14b92, type: 2}
+  southLocation: {fileID: 11400000, guid: 74d4fc405cace4260bd2facee883cbbc, type: 2}
+  eastLocation: {fileID: 11400000, guid: b61a3692fd6294879b3b6215e78d3232, type: 2}
+  westLocation: {fileID: 11400000, guid: d5673215d5fb745c9811c690af5a7a44, type: 2}
