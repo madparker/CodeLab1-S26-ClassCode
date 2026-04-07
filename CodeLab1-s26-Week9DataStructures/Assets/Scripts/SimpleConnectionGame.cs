@@ -9,7 +9,7 @@ public class SimpleConnectionGame : MonoBehaviour
     public int height = 6;
     
     private int[,] grid; // 0 be an empty space, 1 be blue, and 2 be red
-
+    
     public Text display;
     
     private bool redTurn = false;

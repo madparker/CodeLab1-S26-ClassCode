@@ -14,7 +14,6 @@ public class DictionaryExample : MonoBehaviour
         // And what items the player already has.
         DisplayItems();
     }
-
     // A dictionary to represent what resources they have.
     private Dictionary<string, int> resourcesOwned = new Dictionary<string, int>();
     // A dictionary to represent what items they have.
@@ -25,7 +24,8 @@ public class DictionaryExample : MonoBehaviour
     {
         if (resourcesOwned.ContainsKey(resourceType))
         {
-            resourcesOwned[resourceType] = resourcesOwned[resourceType] + amountToAdd;
+            resourcesOwned[resourceType] = 
+                resourcesOwned[resourceType] + amountToAdd;
             
             Debug.Log("You own " + resourcesOwned[resourceType] + " of " + resourceType);
         }
@@ -54,7 +54,8 @@ public class DictionaryExample : MonoBehaviour
     // This function determines whether you have at least "amount" of a resource type
     public bool HasEnoughResources(string resourceType, int amount)
     {
-        if (!resourcesOwned.ContainsKey(resourceType) || resourcesOwned[resourceType] < amount)
+        if (!resourcesOwned.ContainsKey(resourceType) || 
+            resourcesOwned[resourceType] < amount)
             return false;
 
         return true;

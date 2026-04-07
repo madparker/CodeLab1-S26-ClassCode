@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ListExample : MonoBehaviour
 {
+    //declare vars
     public InputField input;
     public TextAsset textFileWithNames;
     public Text display;
@@ -41,6 +41,11 @@ public class ListExample : MonoBehaviour
 
         var indexOfLastLanni = 0;
 
+        //This is the built in method to find the last index of "LANNI" in the list.
+        //It should be 4520.
+        namesList.LastIndexOf("LANNI");
+        
+        //This also finds the last index of "LANNI," just a different way to do it.
         for (int i = 0; i < namesList.Count; i++)
         {
             if (namesList[i].Equals("LANNI"))
@@ -71,15 +76,15 @@ public class ListExample : MonoBehaviour
             
 
             // Loop through the entire list
-            // for (int i = 0; i < namesList.Count; i++)
-            // {
-            //     // If any of the namesList in the list match what in the input field,
-            //     // say it's in the list.
-            //     if (input.text.ToUpper() == namesList[i])
-            //     {
-            //         display.text = "In the list!";
-            //     }
-            // }
+            for (int i = 0; i < namesList.Count; i++)
+            {
+                // If any of the namesList in the list match what in the input field,
+                // say it's in the list.
+                if (input.text.ToUpper() == namesList[i])
+                {
+                    display.text = "In the list!";
+                }
+            }
             
             //TODO: Is there a better way to do this? With less code?
             //TODO: That will be faster?

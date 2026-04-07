@@ -15,6 +15,16 @@ public class StackExample : MonoBehaviour
 
     private void Start()
     {
+        DoAThing();
+    }
+
+    //This is a garbage function that only exists to show you a StackTrace.
+    public void DoAThing()
+    {
+        int[] iArray = new int[2];
+        
+        Debug.Log(iArray[0]);
+        iArray[5] = 0;
     }
 
     private void Update()
