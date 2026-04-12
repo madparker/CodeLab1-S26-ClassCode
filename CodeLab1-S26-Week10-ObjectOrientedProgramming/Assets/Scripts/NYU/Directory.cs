@@ -17,12 +17,17 @@ public class Directory : MonoBehaviour
     {
         nyuPeopleList = new List<NYUPerson>();
 
+        NYUPerson nyuObject = new NYUPerson("Logan", "lc1782");
+        
         //make a new NYUFaculty
         NYUPerson matt = new NYUStaff("Matt Parker", "mp612", 99.99f);
-        NYUStudent rio = new NYUStudent("Rio", "r123", 6, 3.9f);
+        NYUPerson mars = new NYUStudent("Mars", "m123", 6, 1.9f);
+        NYUPerson fumito = new NYUVisitor("Fumito Ueda", "fu5387",
+            "Team Ico", NYUVisitor.VisitorType.industry);
         
         nyuPeopleList.Add(matt);
-        nyuPeopleList.Add(rio);
+        nyuPeopleList.Add(mars);
+        nyuPeopleList.Add(fumito);
         
         UpdateRecord(); //update the text display to show the the info from the first person in the list
     }

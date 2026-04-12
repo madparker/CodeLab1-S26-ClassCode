@@ -9,6 +9,8 @@ public class NYUStaff : NYUPerson
     public NYUStaff()
     {
         type = "NYU Staff";
+
+        testI = 2;
     }
 
     public NYUStaff(string name, string netId, float salary) : base(name, netId)

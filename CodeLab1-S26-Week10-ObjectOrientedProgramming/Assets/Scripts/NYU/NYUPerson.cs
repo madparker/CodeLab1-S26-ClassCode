@@ -9,7 +9,9 @@ public class NYUPerson
     public string netId;
     public string type;
 
-    //this is the base constructor'
+    protected int testI = 7;
+
+    //this is the base constructor
     public NYUPerson()
     {
         name = "Insert Name";
