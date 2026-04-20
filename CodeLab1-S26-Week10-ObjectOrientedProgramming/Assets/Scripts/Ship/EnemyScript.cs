@@ -8,7 +8,8 @@ public class EnemyScript : MonoBehaviour
     //reference to the bullet prefab
     void Start()
     {
-        InvokeRepeating("Fire", 1, 1);
+        //InvokeRepeating("Fire", 1, 1);
+        InvokeRepeating(nameof(Fire), 1, 1);
         //repeating the fire function every second
     }
 
