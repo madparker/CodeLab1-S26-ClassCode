@@ -26,12 +26,12 @@ public class BetManager : MonoBehaviour
 
     public void LoseBet()
     {
-        cash -= currentBet*2;
+        cash -= currentBet;
     }
 
     public void WinBet()
     {
-        cash += currentBet*2;
+        cash += currentBet;
     }
 
     public void PushBet()

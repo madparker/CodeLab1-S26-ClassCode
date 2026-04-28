@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class HitMissManager : MonoBehaviour
 {
+    //enum for our different modes of randomness
     public enum HitMissMode
     {
         Random,
@@ -20,11 +22,11 @@ public class HitMissManager : MonoBehaviour
     
     string previousResult = "";
     
-    [Range(0, 100)]
+    [Range(2, 100)]
     public int shuffleBagSize;
     
     public TextMeshProUGUI resultText;
-    public TextMeshProUGUI probablityText;
+    [FormerlySerializedAs("probablityText")] public TextMeshProUGUI probabilityText;
     public TextMeshProUGUI streakText;
 
     public ShuffleBag<string> shuffleBag;
@@ -37,9 +39,10 @@ public class HitMissManager : MonoBehaviour
         Reset();
     }
 
+    //Resets you attacks and streak back to 0 for each
     public void Reset()
     {
-        ModPercentage(0f);
+        ModifyPercentage(0f);
         resultText.text = "";
         streakText.text = "Streak: 0";
         log = "\n\n";
@@ -108,11 +111,11 @@ public class HitMissManager : MonoBehaviour
         }
     }
 
-    public void ModPercentage(float percentage)
+    public void ModifyPercentage(float percentage)
     {
         hitProbability += percentage;
         
-        probablityText.text = "Hit Probability: " + Mathf.RoundToInt(hitProbability * 100) + "%";
+        probabilityText.text = "Hit Probability: " + Mathf.RoundToInt(hitProbability * 100) + "%";
 
         RebuildBag();
     }

@@ -1,6 +1,10 @@
 ﻿//https://gist.github.com/col000r/6658520
 //but all the hard work done by mstevenson: https://gist.github.com/mstevenson/4050130
 
+//made slightly better for Unity and more legible 
+//NYU Game Center Code Lab 1 2026,
+//but the more hard work was done by mstevenson
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,12 +32,19 @@ public class ShuffleBag<T> : ICollection<T>, IList<T>
 				return default(T);
 			return data[0];
 		}
-		int grab = Mathf.FloorToInt (Random.value * (cursor + 1));
-		T temp = data[grab];
-		data[grab] = this.data[this.cursor];
-		data[cursor] = temp;
+		//get a random index in the list	
+		int index = Random.Range(0, cursor + 1);
+		//get the values at data[index] and data[cursor]
+		T indexValue = data[index];
+		T cursorValue = data[cursor];
+		//swamp the positions of the values
+		//so the used value is behind the cursor
+		//and the unused value is at the cursor
+		data[index] = cursorValue;
+		data[cursor] = indexValue;
+		//move the cursor forward
 		cursor--;
-		return temp;
+		return indexValue;
 	}
 	
 	//This Constructor will let you do this: ShuffleBag<int> intBag = new ShuffleBag<int>(new int[] {1, 2, 3, 4, 5});
